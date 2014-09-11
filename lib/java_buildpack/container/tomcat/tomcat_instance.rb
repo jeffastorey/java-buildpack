@@ -36,8 +36,8 @@ module JavaBuildpack
       # (see JavaBuildpack::Component::BaseComponent#compile)
       def compile
         download(@version, @uri) { |file| expand file }
-        puts "application.root is @application.root"
-        puts "application.root.children is @application.root.children"
+        puts "application.root is #{@application.root}"
+        puts "application.root.children is #{@application.root.children}"
         puts "root is #{root}"
         link_to(@application.root.children, root)
         @application.root.children.each{|it| puts "child is #{it}"}
